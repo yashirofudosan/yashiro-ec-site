@@ -35,9 +35,9 @@
   --element-water-glow: rgba(95, 168, 211, 0.5);
 
   /* Utilities */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
   --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -86,7 +86,8 @@ a {
 }
 
 .glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.09);
 }
 
 /* Dynamic Hover Effects */
