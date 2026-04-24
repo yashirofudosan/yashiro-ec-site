@@ -1,26 +1,99 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Dark Base Theme */
+  --bg-primary: #050505;
+  --bg-secondary: #121212;
+  --text-primary: #eaeaea;
+  --text-secondary: #a0a0a0;
+
+  /* Five Elements (五行) Color System */
+  
+  /* Wood (木) - Growth, Vitality */
+  --element-wood-base: #2d5a27;
+  --element-wood-light: #4a7c59;
+  --element-wood-glow: rgba(74, 124, 89, 0.4);
+
+  /* Fire (火) - Energy, Passion */
+  --element-fire-base: #8b0000;
+  --element-fire-light: #ff4500;
+  --element-fire-glow: rgba(255, 69, 0, 0.4);
+
+  /* Earth (土) - Stability, Grounding */
+  --element-earth-base: #8b5a2b;
+  --element-earth-light: #cd853f;
+  --element-earth-glow: rgba(205, 133, 63, 0.4);
+
+  /* Metal (金) - Clarity, Precision */
+  --element-metal-base: #696969;
+  --element-metal-light: #d3d3d3;
+  --element-metal-glow: rgba(211, 211, 211, 0.4);
+
+  /* Water (水) - Flow, Wisdom */
+  --element-water-base: #000080;
+  --element-water-light: #4682b4;
+  --element-water-glow: rgba(70, 130, 180, 0.4);
+
+  /* Utilities */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Base Layout Classes */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dynamic Hover Effects */
+.hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
 }

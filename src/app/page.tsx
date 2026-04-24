@@ -1,65 +1,85 @@
 import Image from "next/image";
+import Link from 'next/link';
+import HeroContent from '@/components/HeroContent';
+import ProductShowcase from '@/components/ProductShowcase';
+import { client } from "@/lib/microcms";
+import "./home.css";
 
-export default function Home() {
+export default async function Home() {
+  // Fetch up to 8 latest products directly from microCMS
+  const response = await client.getList({
+    endpoint: "products",
+    queries: { limit: 8 }
+  });
+  const products = response.contents;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="main-content">
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <HeroContent />
+        
+        {/* Abstract 5 Elements Flow Animation */}
+        <div className="elements-background">
+          <div className="element-orb wood-orb"></div>
+          <div className="element-orb fire-orb"></div>
+          <div className="element-orb earth-orb"></div>
+          <div className="element-orb metal-orb"></div>
+          <div className="element-orb water-orb"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+      </section>
+
+      {/* Category Section */}
+      <section className="categories-section">
+        <h2 className="section-title">The Five Elements Collection</h2>
+        <div className="category-grid">
+          
+          {/* Wood Category */}
+          <a href="/category/wood" className="glass-panel category-card hover-lift element-wood">
+            <div className="card-content">
+              <h3>Wood (木)</h3>
+              <p>Growth, Vitality. Teak furniture and lush foliage.</p>
+            </div>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+
+          {/* Fire Category */}
+          <a href="/category/fire" className="glass-panel category-card hover-lift element-fire">
+            <div className="card-content">
+              <h3>Fire (火)</h3>
+              <p>Energy, Passion. Warm mahogany and vivid blooms.</p>
+            </div>
           </a>
+
+          {/* Earth Category */}
+          <a href="/category/earth" className="glass-panel category-card hover-lift element-earth">
+            <div className="card-content">
+              <h3>Earth (土)</h3>
+              <p>Stability, Grounding. Solid oak and trailing vines.</p>
+            </div>
+          </a>
+
+          {/* Metal Category */}
+          <a href="/category/metal" className="glass-panel category-card hover-lift element-metal">
+            <div className="card-content">
+              <h3>Metal (金)</h3>
+              <p>Clarity, Precision. Sleek steel accents and structured plants.</p>
+            </div>
+          </a>
+
+          {/* Water Category */}
+          <a href="/category/water" className="glass-panel category-card hover-lift element-water">
+            <div className="card-content">
+              <h3>Water (水)</h3>
+              <p>Flow, Wisdom. Flowing resin woods and aquatic accents.</p>
+            </div>
+          </a>
+
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Expanded Philosophy and Teasers section */}
+      <ProductShowcase products={products} />
+    </main>
   );
 }

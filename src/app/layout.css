@@ -1,0 +1,272 @@
+/* Premium Header */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-logo a {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-item:hover {
+  color: var(--text-primary);
+}
+
+/* Underline hover effect */
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-primary);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav-link-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-action-btn {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-action-btn:hover {
+  opacity: 0.6;
+}
+
+/* Premium Footer */
+.footer {
+  background-color: #020202;
+  padding: 6rem 4rem 3rem 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-brand h3 {
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 1rem;
+}
+
+.footer-col ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Dynamic Elemental Hovers for Header & Footer */
+.nav-link-item.hover-wood:hover, .footer-col ul li a.hover-wood:hover { color: var(--element-wood-light) !important; text-shadow: 0 0 15px var(--element-wood-base); }
+.nav-link-item.hover-wood::after { background-color: var(--element-wood-light) !important; }
+
+.nav-link-item.hover-fire:hover, .footer-col ul li a.hover-fire:hover { color: var(--element-fire-light) !important; text-shadow: 0 0 15px var(--element-fire-base); }
+.nav-link-item.hover-fire::after { background-color: var(--element-fire-light) !important; }
+
+.nav-link-item.hover-earth:hover, .footer-col ul li a.hover-earth:hover { color: var(--element-earth-light) !important; text-shadow: 0 0 15px var(--element-earth-base); }
+.nav-link-item.hover-earth::after { background-color: var(--element-earth-light) !important; }
+
+.nav-link-item.hover-metal:hover, .footer-col ul li a.hover-metal:hover { color: var(--element-metal-light) !important; text-shadow: 0 0 15px var(--element-metal-base); }
+.nav-link-item.hover-metal::after { background-color: var(--element-metal-light) !important; }
+
+.nav-link-item.hover-water:hover, .footer-col ul li a.hover-water:hover { color: var(--element-water-light) !important; text-shadow: 0 0 15px var(--element-water-base); }
+.nav-link-item.hover-water::after { background-color: var(--element-water-light) !important; }
+
+/* Responsive Mobile Navigation */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  z-index: 3000;
+  position: relative;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.mobile-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+.mobile-link.emphasis {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.mobile-link:hover {
+  color: var(--text-primary);
+}
+
+.mobile-divider {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 1100px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .hamburger-btn {
+    display: block;
+  }
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .grid-layout.reverse .text-block {
+    order: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
