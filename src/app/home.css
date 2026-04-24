@@ -90,15 +90,15 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.5;
+  opacity: 0.7;
   animation: float 20s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-.wood-orb { width: 30vw; height: 30vw; background: var(--element-wood-base); top: -5vw; left: 10vw; animation-delay: 0s; }
-.fire-orb { width: 25vw; height: 25vw; background: var(--element-fire-base); top: 30vw; right: 5vw; animation-delay: -5s; }
-.earth-orb { width: 35vw; height: 35vw; background: var(--element-earth-base); bottom: -10vw; left: 30vw; animation-delay: -10s; }
-.metal-orb { width: 20vw; height: 20vw; background: var(--element-metal-base); top: 40vw; left: -5vw; animation-delay: -15s; }
-.water-orb { width: 40vw; height: 40vw; background: var(--element-water-base); bottom: 10vw; right: -10vw; animation-delay: -2s; }
+.wood-orb { width: 30vw; height: 30vw; background: var(--element-wood-light); top: -5vw; left: 10vw; animation-delay: 0s; }
+.fire-orb { width: 25vw; height: 25vw; background: var(--element-fire-light); top: 30vw; right: 5vw; animation-delay: -5s; }
+.earth-orb { width: 35vw; height: 35vw; background: var(--element-earth-light); bottom: -10vw; left: 30vw; animation-delay: -10s; }
+.metal-orb { width: 20vw; height: 20vw; background: var(--element-metal-light); top: 40vw; left: -5vw; animation-delay: -15s; }
+.water-orb { width: 40vw; height: 40vw; background: var(--element-water-light); bottom: 10vw; right: -10vw; animation-delay: -2s; }
 
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
@@ -142,7 +142,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  opacity: 0.3;
+  opacity: 0.2;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
