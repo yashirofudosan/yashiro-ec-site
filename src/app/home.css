@@ -17,6 +17,7 @@
   letter-spacing: 2px;
   background: linear-gradient(90deg, var(--element-metal-light), var(--element-water-light));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -58,6 +59,7 @@
   letter-spacing: -2px;
   background: linear-gradient(135deg, #fff, var(--text-secondary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeUp 1s ease-out forwards;
 }
@@ -178,4 +180,44 @@
 
 .card-content p {
   color: var(--text-secondary);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+    padding: 0 1.5rem;
+    padding-top: 64px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .categories-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .category-card {
+    height: 250px;
+  }
+
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
 }

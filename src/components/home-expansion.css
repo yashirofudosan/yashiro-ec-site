@@ -124,18 +124,25 @@
   font-weight: 300;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .product-showcase {
-    padding: 4rem 2rem;
+    padding: 3rem 1.2rem 6rem;
   }
-  .showcase-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+  .showcase-title {
+    font-size: 1.5rem;
   }
   .showcase-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .sc-name {
+    font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
