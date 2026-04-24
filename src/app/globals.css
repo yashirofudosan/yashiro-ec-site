@@ -10,29 +10,29 @@
   /* Five Elements (五行) Color System */
   
   /* Wood (木) - Growth, Vitality */
-  --element-wood-base: #2d5a27;
-  --element-wood-light: #4a7c59;
-  --element-wood-glow: rgba(74, 124, 89, 0.4);
+  --element-wood-base: #2d6b3a;
+  --element-wood-light: #5fa672;
+  --element-wood-glow: rgba(95, 166, 114, 0.5);
 
   /* Fire (火) - Energy, Passion */
-  --element-fire-base: #8b0000;
-  --element-fire-light: #ff4500;
-  --element-fire-glow: rgba(255, 69, 0, 0.4);
+  --element-fire-base: #a01010;
+  --element-fire-light: #ff6b3d;
+  --element-fire-glow: rgba(255, 107, 61, 0.5);
 
   /* Earth (土) - Stability, Grounding */
-  --element-earth-base: #8b5a2b;
-  --element-earth-light: #cd853f;
-  --element-earth-glow: rgba(205, 133, 63, 0.4);
+  --element-earth-base: #9b6a30;
+  --element-earth-light: #d4a05a;
+  --element-earth-glow: rgba(212, 160, 90, 0.5);
 
   /* Metal (金) - Clarity, Precision */
-  --element-metal-base: #696969;
-  --element-metal-light: #d3d3d3;
-  --element-metal-glow: rgba(211, 211, 211, 0.4);
+  --element-metal-base: #888888;
+  --element-metal-light: #e8e8e8;
+  --element-metal-glow: rgba(232, 232, 232, 0.5);
 
   /* Water (水) - Flow, Wisdom */
-  --element-water-base: #000080;
-  --element-water-light: #4682b4;
-  --element-water-glow: rgba(70, 130, 180, 0.4);
+  --element-water-base: #1a3a7a;
+  --element-water-light: #5fa8d3;
+  --element-water-glow: rgba(95, 168, 211, 0.5);
 
   /* Utilities */
   --glass-bg: rgba(255, 255, 255, 0.03);
