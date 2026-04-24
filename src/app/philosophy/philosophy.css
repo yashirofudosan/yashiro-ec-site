@@ -37,8 +37,10 @@
   letter-spacing: 0.1em;
   background: linear-gradient(135deg, #fff, #555);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeUp 1.5s ease-out forwards;
+  padding: 0 1.5rem;
 }
 
 .philosophy-subtitle {
@@ -139,4 +141,66 @@
 @keyframes fadeUpOnScroll {
   from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .philosophy-hero {
+    height: 70vh;
+    padding: 0 1.5rem;
+  }
+
+  .philosophy-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .philosophy-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-top: 1.5rem;
+  }
+
+  .philosophy-content {
+    padding: 0 1.5rem;
+    gap: 6rem;
+    margin-top: -2rem;
+  }
+
+  .grid-layout,
+  .grid-layout.reverse {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .grid-layout.reverse .text-block {
+    order: unset;
+  }
+
+  .text-block h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .block-placeholder {
+    height: 280px;
+  }
+
+  .philosophy-footer {
+    margin-top: 8rem;
+    padding: 0 1.5rem;
+  }
+
+  .philosophy-footer h2 {
+    font-size: 1.8rem;
+  }
+
+  .action-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 0.85rem;
+  }
 }

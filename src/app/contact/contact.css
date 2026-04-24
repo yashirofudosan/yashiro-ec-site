@@ -173,3 +173,40 @@
   line-height: 1.8;
   margin-bottom: 2rem;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 5rem 1.2rem 4rem;
+    align-items: flex-start;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 3rem;
+    border-radius: 12px;
+  }
+
+  .contact-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .submit-btn, .reset-btn {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .success-message {
+    padding: 2rem 1.2rem;
+  }
+
+  .success-message h2 {
+    font-size: 1.5rem;
+  }
+}
