@@ -12,8 +12,8 @@ export const dictionaries = {
     },
     hero: {
       title: "ENVIRONMENTAL\nPSYCHOLOGY",
-      subtitle: "Align your space. Eliminate the noise.",
-      cta: "EXPLORE THE ELEMENTS"
+      subtitle: "Defining space as hardware that supports occupant performance.\nLogical spatial optimization for the modern lifestyle.",
+      cta: "EXPLORE THE ARCHITECTURE"
     },
     footer: {
       collections: "COLLECTIONS",
@@ -50,9 +50,9 @@ export const dictionaries = {
       close: "閉じる"
     },
     hero: {
-      title: "環境心理学に\n基づく空間最適化",
-      subtitle: "ノイズを排除し、空間を調律する。",
-      cta: "要素を探求する"
+      title: "環境心理学に基づいた\n空間最適化",
+      subtitle: "空間を居住者のパフォーマンスを支える「ハードウェア」として定義し、\n電磁波や視覚的ノイズを論理的に排除（デバッグ）する。",
+      cta: "アーキテクチャを見る"
     },
     footer: {
       collections: "五行要素",

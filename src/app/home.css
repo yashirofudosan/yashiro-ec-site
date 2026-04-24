@@ -78,6 +78,33 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+.hero-status-panel {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 20;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
 /* Elements Background Animations */
 .elements-background {
   position: absolute;
@@ -86,12 +113,23 @@
   pointer-events: none;
 }
 
+.hero-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+  z-index: 1;
+}
+
 .element-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.7;
-  animation: float 20s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: float 25s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .wood-orb { width: 30vw; height: 30vw; background: var(--element-wood-light); top: -5vw; left: 10vw; animation-delay: 0s; }
