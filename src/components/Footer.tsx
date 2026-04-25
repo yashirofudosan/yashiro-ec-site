@@ -47,6 +47,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>{t("footer.support")}</h4>
           <ul>
+            <li><Link href="/realestate">🏠 不動産サービス</Link></li>
             <li><Link href="/contact">{t("footer.contact")}</Link></li>
             <li><Link href="/company">企業情報</Link></li>
             <li><Link href="/legal/privacy">プライバシーポリシー</Link></li>
