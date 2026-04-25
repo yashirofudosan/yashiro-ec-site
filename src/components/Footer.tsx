@@ -39,9 +39,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4>{t("footer.philosophy")}</h4>
           <ul>
-            <li><Link href="/philosophy">{t("footer.philosophyLink1")}</Link></li>
-            <li><Link href="/philosophy">{t("footer.philosophyLink2")}</Link></li>
-            <li><Link href="/philosophy">{t("footer.philosophyLink3")}</Link></li>
+            <li><Link href="/about">{t("footer.philosophyLink1")}</Link></li>
+            <li><Link href="/five-elements">{t("footer.philosophyLink2")}</Link></li>
           </ul>
         </div>
 

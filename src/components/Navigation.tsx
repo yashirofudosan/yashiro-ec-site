@@ -35,6 +35,9 @@ export default function Navigation() {
           <Link href="/room/living" className="nav-link-item">{t("nav.living")}</Link>
           <Link href="/room/bedroom" className="nav-link-item">{t("nav.bedroom")}</Link>
           <Link href="/room/workspace" className="nav-link-item">{t("nav.workspace")}</Link>
+          <span style={{color: 'rgba(255,255,255,0.2)', margin: '0 0.5rem'}}>|</span>
+          <Link href="/about" className="nav-link-item">{t("nav.about")}</Link>
+          <Link href="/five-elements" className="nav-link-item hover-wood">{t("nav.fiveElements")}</Link>
         </div>
 
         <div className="nav-actions">
@@ -71,6 +74,10 @@ export default function Navigation() {
           <Link href="/room/living" className="mobile-link" onClick={handleLinkClick}>{t("nav.living")}</Link>
           <Link href="/room/bedroom" className="mobile-link" onClick={handleLinkClick}>{t("nav.bedroom")}</Link>
           <Link href="/room/workspace" className="mobile-link" onClick={handleLinkClick}>{t("nav.workspace")}</Link>
+
+          <div className="mobile-divider">PHILOSOPHY</div>
+          <Link href="/about" className="mobile-link" onClick={handleLinkClick}>{t("nav.about")}</Link>
+          <Link href="/five-elements" className="mobile-link hover-wood" onClick={handleLinkClick}>{t("nav.fiveElements")}</Link>
         </div>
       </div>
     </>

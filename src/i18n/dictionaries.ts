@@ -8,7 +8,9 @@ export const dictionaries = {
       workspace: "Workspace",
       search: "SEARCH",
       menu: "MENU",
-      close: "CLOSE"
+      close: "CLOSE",
+      about: "ABOUT YASHIRO",
+      fiveElements: "FIVE ELEMENTS"
     },
     hero: {
       title: "ENVIRONMENTAL\nPSYCHOLOGY",
@@ -24,9 +26,8 @@ export const dictionaries = {
       water: "Water (Flow)",
       spaces: "SPACES",
       philosophy: "PHILOSOPHY",
-      philosophyLink1: "Environmental Psychology",
-      philosophyLink2: "Geopathic Stress",
-      philosophyLink3: "About YASHIRO",
+      philosophyLink1: "About YASHIRO",
+      philosophyLink2: "The Five Elements",
       support: "SUPPORT",
       contact: "Contact"
     },
@@ -47,7 +48,9 @@ export const dictionaries = {
       workspace: "書斎",
       search: "検索",
       menu: "メニュー",
-      close: "閉じる"
+      close: "閉じる",
+      about: "YASHIROとは",
+      fiveElements: "五行とは"
     },
     hero: {
       title: "環境心理学に基づいた\n空間最適化",
@@ -63,9 +66,8 @@ export const dictionaries = {
       water: "水 (循環・柔軟性)",
       spaces: "空間別",
       philosophy: "YASHIROの哲学",
-      philosophyLink1: "環境心理学とは",
-      philosophyLink2: "ジオパシック・ストレスの排除",
-      philosophyLink3: "YASHIROについて",
+      philosophyLink1: "YASHIROとは",
+      philosophyLink2: "五行とは",
       support: "お客様サポート",
       contact: "お問い合わせ"
     },
@@ -80,4 +82,4 @@ export const dictionaries = {
 };
 
 export type Locale = keyof typeof dictionaries;
-export type DictionaryPath = string; // Simpler type mapping for dot notation
+export type DictionaryPath = string;
