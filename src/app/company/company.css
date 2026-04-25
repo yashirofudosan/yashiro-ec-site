@@ -1,0 +1,85 @@
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.company-label {
+  padding: 1.2rem 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  vertical-align: top;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.company-value {
+  padding: 1.2rem 1.5rem;
+  color: #ccc;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Accent Block */
+.company-accent-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.accent-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.accent-item:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.accent-num {
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.15);
+  min-width: 2.5rem;
+  font-family: monospace;
+}
+
+.accent-text {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .company-label {
+    width: auto;
+    display: block;
+    white-space: normal;
+    padding-bottom: 0.3rem;
+  }
+  .company-value {
+    display: block;
+    padding-top: 0.3rem;
+  }
+  .company-table tr {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .company-table tbody tr td {
+    border-bottom: none;
+  }
+}

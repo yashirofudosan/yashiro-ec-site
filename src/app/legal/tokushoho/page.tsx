@@ -3,22 +3,22 @@ import "../../philosophy/philosophy.css";
 
 export const metadata = {
   title: "特定商取引法に基づく表記 | YASHIRO",
-  description: "YASHIRO ECサイトの特定商取引法に基づく表記。販売業者・価格・支払方法・返品ポリシーについて。",
+  description: "株式会社YASHIRO不動産の特定商取引法に基づく表記。",
 };
 
 const rows = [
-  { label: "販売業者", value: "屋代不動産（YASHIRO）" },
-  { label: "代表者", value: "屋代（Takeda Yusei）" },
-  { label: "所在地", value: "お問い合わせ後に開示いたします" },
-  { label: "電話番号", value: "お問い合わせ後に開示いたします" },
-  { label: "メールアドレス", value: "お問い合わせフォームよりご連絡ください" },
+  { label: "販売業者", value: "株式会社YASHIRO不動産" },
+  { label: "代表者", value: "武田雄成 / 武田亜希子" },
+  { label: "所在地", value: "〒141-0031 東京都品川区西五反田1-26-2 五反田サンハイツ810" },
+  { label: "電話番号", value: "03-3407-1707" },
+  { label: "メールアドレス", value: "info@yashirofudosan.jp" },
   { label: "販売価格", value: "各商品ページに記載の価格（消費税込み）" },
   { label: "追加費用", value: "送料・梱包費は別途商品ページに表示" },
   { label: "支払方法", value: "クレジットカード（Visa / Mastercard / Amex / JCB）" },
   { label: "支払時期", value: "注文確定時にクレジットカード決済（即時）" },
   { label: "商品の引渡し時期", value: "ご注文確認後、通常3〜7営業日以内に発送（大型家具は別途ご連絡）" },
-  { label: "返品・交換について", value: "商品到着後7日以内にご連絡ください。未使用・未開封のものに限り返品・交換可能です。ただし、お客様都合による返品の送料はお客様負担となります。不良品・誤送品の場合は当社負担にて対応いたします。" },
-  { label: "返品送付先", value: "お問い合わせ後にお知らせいたします" },
+  { label: "返品・交換について", value: "商品到着後7日以内にご連絡ください。未使用・未開封のものに限り返品・交換可能です。お客様都合による返品の送料はお客様負担となります。不良品・誤送品の場合は当社負担にて対応いたします。" },
+  { label: "返品送付先", value: "〒141-0031 東京都品川区西五反田1-26-2 五反田サンハイツ810" },
 ];
 
 export default function TokushohoPage() {
