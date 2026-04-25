@@ -47,16 +47,20 @@ export default function Footer() {
         <div className="footer-col">
           <h4>{t("footer.support")}</h4>
           <ul>
-            <li><Link href="#">Maintenance & Care</Link></li>
-            <li><Link href="#">Shipping & Returns</Link></li>
             <li><Link href="/contact">{t("footer.contact")}</Link></li>
+            <li><Link href="/legal/privacy">プライバシーポリシー</Link></li>
+            <li><Link href="/legal/tokushoho">特定商取引法に基づく表記</Link></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
         <span>© 2026 YASHIRO CO., LTD. ALL RIGHTS RESERVED.</span>
-        <span>PRIVACY POLICY | TERMS OF SERVICE</span>
+        <span>
+          <Link href="/legal/privacy" style={{ color: 'inherit' }}>PRIVACY POLICY</Link>
+          {" | "}
+          <Link href="/legal/tokushoho" style={{ color: 'inherit' }}>特定商取引法</Link>
+        </span>
       </div>
     </footer>
   );
