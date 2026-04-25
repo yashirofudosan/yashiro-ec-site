@@ -41,8 +41,11 @@
   padding: 0 2rem;
   background-color: #050505;
   background-image: 
-    radial-gradient(ellipse at 50% -20%, rgba(70, 75, 80, 0.5), transparent 70%),
-    radial-gradient(circle at 100% 100%, rgba(30, 35, 40, 0.4), transparent 60%);
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/hero-abstract.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .hero-content {

@@ -13,7 +13,7 @@ export const dictionaries = {
       fiveElements: "FIVE ELEMENTS"
     },
     hero: {
-      title: "ENVIRONMENTAL\nPSYCHOLOGY",
+      title: "ENVIRONMENTAL PSYCHOLOGY",
       subtitle: "Defining space as hardware that supports occupant performance.\nLogical spatial optimization for the modern lifestyle.",
       cta: "EXPLORE THE ARCHITECTURE"
     },
@@ -53,8 +53,8 @@ export const dictionaries = {
       fiveElements: "五行とは"
     },
     hero: {
-      title: "環境心理学に基づいた\n空間最適化",
-      subtitle: "空間を居住者のパフォーマンスを支える「ハードウェア」として定義し、\n電磁波や視覚的ノイズを論理的に排除（デバッグ）する。",
+      title: "環境心理学に基づいた空間最適化",
+      subtitle: "空間を居住者のパフォーマンスを支える「ハードウェア」として定義し、電磁波や視覚的ノイズを論理的に排除（デバッグ）する。",
       cta: "アーキテクチャを見る"
     },
     footer: {
