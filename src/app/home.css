@@ -41,8 +41,8 @@
   padding: 0 2rem;
   background-color: #ffffff;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)),
-    url('/hero-white-vivid.png');
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    url('/hero-white-ambient.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
