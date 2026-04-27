@@ -41,6 +41,7 @@ export default function Footer() {
           <ul>
             <li><Link href="/about">{t("footer.philosophyLink1")}</Link></li>
             <li><Link href="/five-elements">{t("footer.philosophyLink2")}</Link></li>
+            <li><Link href="/magazine">MAGAZINE(記事)</Link></li>
           </ul>
         </div>
 

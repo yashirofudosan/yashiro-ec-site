@@ -17,6 +17,23 @@ const elementData = {
   water: { name: "Water (水)", desc: "Flow and Wisdom", color: "var(--element-water-light)" },
 };
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const paramData = await params;
+  const elementKey = paramData.element.toLowerCase() as keyof typeof elementData;
+  const config = elementData[elementKey] || elementData.wood;
+
+  return {
+    title: `${config.name}のアイテム | YASHIRO EC`,
+    description: `五行思想における「${config.name}」の気を持つ家具・観葉植物のコレクション。${config.desc}`,
+    openGraph: {
+      title: `${config.name}のアイテム | YASHIRO EC`,
+      description: `五行思想における「${config.name}」の気を持つ家具・観葉植物のコレクション。${config.desc}`,
+    },
+  };
+}
+
 export default async function CategoryPage({ params }: CategoryPageProps) {
   // Await params directly per Next.js 15
   const paramData = await params;

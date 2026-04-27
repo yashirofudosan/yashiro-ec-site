@@ -10,8 +10,16 @@ import "./globals.css";
 import "./layout.css";
 
 export const metadata: Metadata = {
-  title: "YASHIRO E-Commerce | Five Elements",
-  description: "Premium Furniture and Houseplants aligned with the Five Elements.",
+  title: "YASHIRO EC | 五行思想インテリア",
+  description: "五行思想（木・火・土・金・水）に基づいたプレミアムな家具と観葉植物をご提案します。環境エネルギーを最適化するYASHIROメソッド。",
+  openGraph: {
+    title: "YASHIRO EC | 五行思想インテリア",
+    description: "五行思想（木・火・土・金・水）に基づいたプレミアムな家具と観葉植物をご提案します。環境エネルギーを最適化するYASHIROメソッド。",
+    url: "https://yashiro-ec.example.com",
+    siteName: "YASHIRO EC",
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" translate="no">
+    <html lang="ja">
       <body className="layout-container">
         <LanguageProvider>
           <CartProvider>

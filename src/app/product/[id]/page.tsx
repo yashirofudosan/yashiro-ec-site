@@ -8,6 +8,30 @@ interface ProductPageProps {
   params: Promise<{ id: string }>;
 }
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const paramData = await params;
+  let product = null;
+  try {
+    product = await getProductDetail(paramData.id);
+  } catch (error) {}
+
+  if (!product) {
+    return { title: "商品が見つかりません | YASHIRO EC" };
+  }
+
+  return {
+    title: `${product.name} | YASHIRO EC`,
+    description: product.desc || "五行思想に基づいたプレミアムな家具・観葉植物。",
+    openGraph: {
+      title: `${product.name} | YASHIRO EC`,
+      description: product.desc || "五行思想に基づいたプレミアムな家具・観葉植物。",
+      images: product.image?.url ? [{ url: product.image.url }] : [],
+    },
+  };
+}
+
 import AddToCartButton from "@/components/AddToCartButton";
 
 export default async function ProductPage({ params }: ProductPageProps) {

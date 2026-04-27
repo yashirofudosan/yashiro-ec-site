@@ -1,0 +1,269 @@
+.magazine-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.magazine-hero {
+  padding: 6rem 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.magazine-hero .bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.magazine-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.magazine-subtitle {
+  display: block;
+  font-size: 0.3em;
+  letter-spacing: 0.3em;
+  margin-top: 0.5rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.magazine-lead {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #bbb;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sp-br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sp-br {
+    display: block;
+  }
+}
+
+.magazine-list-section {
+  padding: 2rem 5% 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.no-articles {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.magazine-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.magazine-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.magazine-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magazine-card:hover .magazine-card-img img {
+  transform: scale(1.05);
+}
+
+.magazine-placeholder-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+  color: #444;
+  font-family: var(--font-primary);
+  letter-spacing: 0.2em;
+}
+
+.magazine-card-tags {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.magazine-tag {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.magazine-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.magazine-card-meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.8rem;
+}
+
+.magazine-card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  color: #fff;
+}
+
+/* Article Detail Styles */
+.article-detail-header {
+  padding: 4rem 5% 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-detail-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.article-detail-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.article-detail-eyecatch {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.article-detail-eyecatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-detail-content {
+  max-width: 760px;
+  margin: 0 auto 6rem;
+  padding: 0 5%;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #ddd;
+}
+
+/* Rich Text Styles */
+.article-detail-content h1,
+.article-detail-content h2,
+.article-detail-content h3 {
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.article-detail-content h2 {
+  font-size: 1.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.article-detail-content h3 {
+  font-size: 1.3rem;
+}
+
+.article-detail-content p {
+  margin-bottom: 1.5rem;
+}
+
+.article-detail-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.article-detail-content ul,
+.article-detail-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-detail-content li {
+  margin-bottom: 0.5rem;
+}
+
+.article-detail-content blockquote {
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}

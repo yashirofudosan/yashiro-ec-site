@@ -38,6 +38,7 @@ export default function Navigation() {
           <span style={{color: 'rgba(255,255,255,0.2)', margin: '0 0.5rem'}}>|</span>
           <Link href="/about" className="nav-link-item">{t("nav.about")}</Link>
           <Link href="/five-elements" className="nav-link-item hover-wood">{t("nav.fiveElements")}</Link>
+          <Link href="/magazine" className="nav-link-item hover-water" style={{ fontWeight: 'bold' }}>MAGAZINE(記事)</Link>
         </div>
 
         <div className="nav-actions">
@@ -78,6 +79,7 @@ export default function Navigation() {
           <div className="mobile-divider">PHILOSOPHY</div>
           <Link href="/about" className="mobile-link" onClick={handleLinkClick}>{t("nav.about")}</Link>
           <Link href="/five-elements" className="mobile-link hover-wood" onClick={handleLinkClick}>{t("nav.fiveElements")}</Link>
+          <Link href="/magazine" className="mobile-link hover-water" onClick={handleLinkClick} style={{ fontWeight: 'bold' }}>MAGAZINE(記事)</Link>
         </div>
       </div>
     </>
