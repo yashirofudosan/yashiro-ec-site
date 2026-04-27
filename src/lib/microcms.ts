@@ -65,10 +65,53 @@ export const getArticles = async (queries?: MicroCMSQueries) => {
 
 // Helper to fetch single article
 export const getArticleDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-  const data = await client.getListDetail<Article>({
-    endpoint: 'articles',
+  const detailData = await client.getListDetail<Article>({
+    endpoint: "articles",
     contentId,
     queries,
   });
-  return data;
+  return detailData;
+};
+
+// ==========================================
+// 風水鑑定図書館 (Library / Appraisals)
+// ==========================================
+export interface Library {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  layout?: string[]; // 1R, 1K, 1LDK...
+  period?: string[]; // 第8運, 第9運...
+  facing?: string[]; // 南向き, 子山午向...
+  content: string;
+  chartImage?: {
+    url: string;
+    height: number;
+    width: number;
+  };
+  remedyWood?: string;
+  remedyFire?: string;
+  remedyEarth?: string;
+  remedyMetal?: string;
+  remedyWater?: string;
+}
+
+export const getLibraries = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Library>({
+    endpoint: "library",
+    queries,
+  });
+  return listData;
+};
+
+export const getLibraryDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+  const detailData = await client.getListDetail<Library>({
+    endpoint: "library",
+    contentId,
+    queries,
+  });
+  return detailData;
 };
