@@ -53,15 +53,32 @@ export default async function LibraryDetailPage({ params }: { params: { id: stri
         <h1>{lib.title}</h1>
       </header>
 
-      {lib.chartImage && (
-        <div className="library-chart-image">
-          <Image 
-            src={lib.chartImage.url} 
-            alt="飛星盤" 
-            width={lib.chartImage.width || 800} 
-            height={lib.chartImage.height || 600} 
-            style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-          />
+      {(lib.eyecatch || lib.chartImage) && (
+        <div className="library-visuals">
+          {lib.eyecatch && (
+            <div className="library-visual-item">
+              <h3 className="visual-title">間取り</h3>
+              <Image 
+                src={lib.eyecatch.url} 
+                alt="間取り" 
+                width={lib.eyecatch.width || 800} 
+                height={lib.eyecatch.height || 600} 
+                className="library-visual-img"
+              />
+            </div>
+          )}
+          {lib.chartImage && (
+            <div className="library-visual-item">
+              <h3 className="visual-title">飛星盤</h3>
+              <Image 
+                src={lib.chartImage.url} 
+                alt="飛星盤" 
+                width={lib.chartImage.width || 800} 
+                height={lib.chartImage.height || 600} 
+                className="library-visual-img"
+              />
+            </div>
+          )}
         </div>
       )}
 

@@ -102,8 +102,37 @@
   font-size: 2rem;
   margin-top: 1rem;
 }
-.library-chart-image {
+.library-visuals {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .library-visuals {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.library-visual-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.visual-title {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.library-visual-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  max-height: 400px;
 }
 .library-content {
   line-height: 1.8;
