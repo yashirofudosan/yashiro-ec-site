@@ -32,6 +32,16 @@ export default async function LibraryPage() {
         ) : (
           libraries.map((lib) => (
             <Link href={`/library/${lib.id}`} key={lib.id} className="library-card hover-lift">
+              {lib.eyecatch ? (
+                <div className="library-card-img">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={lib.eyecatch.url} alt={lib.title} />
+                </div>
+              ) : (
+                <div className="library-card-img library-placeholder-img">
+                  NO IMAGE
+                </div>
+              )}
               <div className="library-card-content">
                 <div className="library-tags">
                   {lib.layout && lib.layout.map((tag) => (

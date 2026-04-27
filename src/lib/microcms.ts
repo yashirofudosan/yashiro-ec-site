@@ -86,6 +86,11 @@ export interface Library {
   layout?: string[]; // 1R, 1K, 1LDK...
   period?: string[]; // 第8運, 第9運...
   facing?: string[]; // 南向き, 子山午向...
+  eyecatch?: {
+    url: string;
+    height: number;
+    width: number;
+  };
   content: string;
   chartImage?: {
     url: string;
