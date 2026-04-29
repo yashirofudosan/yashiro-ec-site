@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ]
+  }
 };
 
 export default function RootLayout({
