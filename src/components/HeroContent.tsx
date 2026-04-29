@@ -10,7 +10,7 @@ export default function HeroContent() {
     <>
       <div className="hero-grid-overlay" />
       <div className="hero-content" key={locale}>
-        <h1 className="hero-title">
+        <h1 className={`hero-title ${locale === 'ja' ? 'hero-title-ja' : ''}`}>
           <span style={{ whiteSpace: 'pre-line' }}>{t("hero.title")}</span>
         </h1>
         <p className="hero-subtitle">{t("hero.subtitle")}</p>
