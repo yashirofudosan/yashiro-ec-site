@@ -100,6 +100,45 @@ export default function FiveElementsPage() {
         </div>
       </section>
 
+      {/* Interaction Cycles (相生・相剋) */}
+      <section className="five-cycles-section">
+        <div className="cycles-inner">
+          <h2 className="cycles-title">五行の相互作用（相生と相剋）</h2>
+          <p className="cycles-desc">
+            五行のエレメントは単独で存在するのではなく、お互いに影響を与え合いながら空間のエネルギーを形成します。
+            このエネルギーのダイナミクスを理解し、適切に配置することで、環境のバグを取り除き、理想的な空間を創り出すことができます。
+          </p>
+          
+          <div className="cycles-grid">
+            <div className="cycle-card sousei">
+              <h3 className="cycle-card-title">相生（そうしょう）- Generative Cycle</h3>
+              <p className="cycle-card-subtitle">相手を生み出し、力を強める「良い影響」のサイクル</p>
+              <div className="cycle-flow">
+                <span>木</span> ➔ <span>火</span> ➔ <span>土</span> ➔ <span>金</span> ➔ <span>水</span> ➔ <span>木</span>
+              </div>
+              <p className="cycle-card-text">
+                あるエレメントが別のエレメントを育て、エネルギーを増幅させる関係です。
+                例えば、木は燃えて火を生み、火は燃え尽きて灰（土）となり、土の中からは鉱物（金）が生まれ、金は冷えて水滴（水）を生み、水は木を育てます。
+                <strong>空間デザインへの応用:</strong> 高めたい運気がある場合、そのエレメントそのものだけでなく、それを「生み出す」エレメントを配置することで、より自然で強力なエネルギーの好循環が生まれます。
+              </p>
+            </div>
+
+            <div className="cycle-card soukoku">
+              <h3 className="cycle-card-title">相剋（そうこく）- Destructive Cycle</h3>
+              <p className="cycle-card-subtitle">相手の力を抑え込み、弱める「抑制」のサイクル</p>
+              <div className="cycle-flow">
+                <span>木</span> ➔ <span>土</span> ➔ <span>水</span> ➔ <span>火</span> ➔ <span>金</span> ➔ <span>木</span>
+              </div>
+              <p className="cycle-card-text">
+                あるエレメントが別のエレメントのエネルギーを奪い、または破壊する関係です。
+                例えば、木は根を張って土の養分を奪い、土は水を堰き止め、水は火を消し、火は金を溶かし、金（刃物）は木を切り倒します。
+                <strong>空間デザインへの応用（化殺）:</strong> 飛星盤などで「悪い気（凶星）」が巡る方位がある場合、この相剋の法則を利用して、悪いエネルギーを打ち消す（化殺する）エレメントを配置し、空間のエラーを無効化します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Five Elements Detail */}
       <section className="five-elements-grid">
         {elements.map((el, i) => (
