@@ -39,13 +39,7 @@
   text-align: center;
   overflow: hidden;
   padding: 0 2rem;
-  background-color: #ffffff;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-    url('/hero-white-ambient.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: var(--bg-primary);
 }
 
 .hero-content {
@@ -60,11 +54,12 @@
   font-size: 5rem;
   font-weight: 300;
   letter-spacing: -2px;
-  background: linear-gradient(135deg, #111, #444);
+  background: linear-gradient(135deg, #ffffff, #bbbbbb);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeUp 1s ease-out forwards;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  animation: fadeUp 1.2s ease-out forwards;
 }
 
 .hero-title-ja {
@@ -76,10 +71,11 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #555;
+  color: #dddddd;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
   max-width: 600px;
   margin: 0 auto;
-  animation: fadeUp 1s ease-out 0.2s forwards;
+  animation: fadeUp 1.2s ease-out 0.3s forwards;
   opacity: 0;
 }
 
@@ -97,8 +93,8 @@
   gap: 0.5rem;
   z-index: 20;
   font-family: monospace;
-  font-size: 0.7rem;
-  color: rgba(0,0,0,0.5);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -112,46 +108,55 @@
 .status-line {
   width: 40px;
   height: 1px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.3);
 }
 
-/* Elements Background Animations */
-.elements-background {
+/* CSS Slideshow */
+.hero-slideshow {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   pointer-events: none;
 }
 
+.slide {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: hero-slide 24s infinite; /* 3 slides * 8s each */
+}
+
+/* Zoom slowly while fading */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 8s; }
+.slide:nth-child(3) { animation-delay: 16s; }
+
+@keyframes hero-slide {
+  0% { opacity: 0; transform: scale(1.05); }
+  10% { opacity: 1; }
+  33% { opacity: 1; }
+  43% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
 .hero-grid-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: 
-    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
-  z-index: 1;
-}
-
-.element-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.4;
-  animation: float 25s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
-}
-
-.wood-orb { width: 30vw; height: 30vw; background: var(--element-wood-light); top: -5vw; left: 10vw; animation-delay: 0s; }
-.fire-orb { width: 25vw; height: 25vw; background: var(--element-fire-light); top: 30vw; right: 5vw; animation-delay: -5s; }
-.earth-orb { width: 35vw; height: 35vw; background: var(--element-earth-light); bottom: -10vw; left: 30vw; animation-delay: -10s; }
-.metal-orb { width: 20vw; height: 20vw; background: var(--element-metal-light); top: 40vw; left: -5vw; animation-delay: -15s; }
-.water-orb { width: 40vw; height: 40vw; background: var(--element-water-light); bottom: 10vw; right: -10vw; animation-delay: -2s; }
-
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5vw, 5vw) scale(1.1); }
-  100% { transform: translate(-5vw, -5vw) scale(0.9); }
+  z-index: 2;
 }
 
 /* Categories */

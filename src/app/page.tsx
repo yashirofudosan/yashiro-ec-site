@@ -20,13 +20,13 @@ export default async function Home() {
       <section className="hero-section">
         <HeroContent />
         
-        {/* Abstract 5 Elements Flow Animation */}
-        <div className="elements-background">
-          <div className="element-orb wood-orb"></div>
-          <div className="element-orb fire-orb"></div>
-          <div className="element-orb earth-orb"></div>
-          <div className="element-orb metal-orb"></div>
-          <div className="element-orb water-orb"></div>
+        {/* CSS Slideshow Background */}
+        <div className="hero-slideshow">
+          {/* Unsplash Placeholder Images (High-End Interior) */}
+          <div className="slide" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2800&q=80')" }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2800&q=80')" }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=2800&q=80')" }}></div>
+          <div className="slide-overlay"></div>
         </div>
       </section>
 
