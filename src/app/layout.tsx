@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
 import CustomCursor from "@/components/CustomCursor";
 import Navigation from "@/components/Navigation";
@@ -8,6 +9,12 @@ import { CartProvider } from "@/context/CartContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 import "./layout.css";
+
+const notoSansJP = Noto_Sans_JP({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "YASHIRO EC | 五行思想インテリア",
@@ -34,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="layout-container">
+      <body className={`layout-container ${notoSansJP.className}`}>
         <LanguageProvider>
           <CartProvider>
             <CustomCursor />
