@@ -9,7 +9,8 @@ export default function HeroContent() {
   return (
     <>
       <div className="hero-grid-overlay" />
-      <div className="hero-content" key={locale}>
+      {/* Text removed as per request for a purely visual hero */}
+      {/* <div className="hero-content" key={locale}>
         <h1 className={`hero-title ${locale === 'ja' ? 'hero-title-ja' : ''}`}>
           <span style={{ whiteSpace: 'pre-line' }}>{t("hero.title")}</span>
         </h1>
@@ -17,7 +18,7 @@ export default function HeroContent() {
         <div style={{ marginTop: '3rem' }}>
           <Link href="/philosophy" className="hero-btn hover-lift">{t("hero.cta")}</Link>
         </div>
-      </div>
+      </div> */}
 
       <div className="hero-status-panel desktop-only">
         <div className="status-item">

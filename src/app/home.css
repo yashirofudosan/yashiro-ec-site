@@ -144,7 +144,8 @@
 .slide-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  /* Very light vignette just to keep nav/status readable, mostly bright */
+  background: linear-gradient(rgba(0,0,0,0.1), transparent 20%, transparent 80%, rgba(0,0,0,0.3));
   z-index: 1;
 }
 
