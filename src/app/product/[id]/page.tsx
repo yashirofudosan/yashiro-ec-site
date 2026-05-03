@@ -59,6 +59,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Parse element representation
   const elementStr = Array.isArray(product.element) ? product.element.join(', ') : (product.element || 'Unknown');
   
+  // Check if it is a plant to show the image disclaimer
+  const isPlant = 
+    String(product.kind || '').includes('植物') || 
+    String(product.kind || '').includes('plant') ||
+    String(product.name || '').includes('植物') ||
+    String(product.name || '').includes('モンステラ') ||
+    String(product.name || '').includes('パキラ');
+
+  
   // Quick mapping for elemental coloring
   const lowerElement = elementStr.toLowerCase();
   const color = lowerElement.includes('fire') ? 'var(--element-fire-light)' :
@@ -81,6 +90,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
              </div>
            )}
         </div>
+        
+        {isPlant && (
+          <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--text-color)', opacity: 0.8, lineHeight: 1.6, padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <strong>※画像に関するご注意</strong><br />
+            商品画像は成長後のイメージ、または同等クラスの参考写真です。植物は生き物のため、お届けする実際の個体によって樹形、葉の付き方、サイズ感などに違いがございます。あらかじめご了承ください。
+          </div>
+        )}
         
         <div className="product-info-panel">
           <span className="element-badge" style={{ borderColor: color, color: color }}>

@@ -81,6 +81,7 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 3rem;
+  white-space: pre-wrap;
 }
 
 .add-to-cart-btn {
