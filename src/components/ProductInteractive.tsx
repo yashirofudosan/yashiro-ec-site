@@ -47,6 +47,34 @@ export default function ProductInteractive({ product, color, isPlant, elementStr
            )}
         </div>
         
+        {hasVariants && (
+          <div className="variant-selector" style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.8rem', letterSpacing: '0.1em' }}>SELECT SIZE</p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+              {availableVariants.map((v) => (
+                <button
+                  key={v.size}
+                  onClick={() => setSelectedVariant(v.size)}
+                  style={{
+                    padding: '0.6rem 1.8rem',
+                    background: selectedVariant === v.size ? color : 'transparent',
+                    color: selectedVariant === v.size ? '#000' : 'var(--text-primary)',
+                    border: `1px solid ${selectedVariant === v.size ? color : 'var(--glass-border)'}`,
+                    borderRadius: '50px',
+                    cursor: 'pointer',
+                    fontWeight: selectedVariant === v.size ? 600 : 400,
+                    transition: 'all 0.2s ease',
+                    fontSize: '1rem',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  {v.size}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
         {isPlant && (
           <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-secondary)', opacity: 0.8, lineHeight: 1.6, textAlign: 'center' }}>
             ※商品画像は成長後のイメージ、または同等の参考写真です。<br />
@@ -68,33 +96,6 @@ export default function ProductInteractive({ product, color, isPlant, elementStr
           <p className="detail-price" style={{ fontSize: '2rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
             ¥{displayPrice ? displayPrice.toLocaleString() : '--'}
           </p>
-
-          {hasVariants && (
-            <div className="variant-selector" style={{ marginBottom: '2rem' }}>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>SIZE</p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                {availableVariants.map((v) => (
-                  <button
-                    key={v.size}
-                    onClick={() => setSelectedVariant(v.size)}
-                    style={{
-                      padding: '0.8rem 1.5rem',
-                      background: selectedVariant === v.size ? color : 'transparent',
-                      color: selectedVariant === v.size ? '#000' : 'var(--text-primary)',
-                      border: `1px solid ${selectedVariant === v.size ? color : 'var(--glass-border)'}`,
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      fontWeight: selectedVariant === v.size ? 600 : 400,
-                      transition: 'all 0.2s',
-                      fontSize: '1.1rem'
-                    }}
-                  >
-                    {v.size}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
           <button 
             className="add-to-cart-btn hover-lift" 
