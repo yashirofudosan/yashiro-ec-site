@@ -41,32 +41,14 @@ export default function TokushohoPage() {
           <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: "2rem" }}>
             最終更新日：2026年4月25日
           </p>
-          <table style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            fontSize: "0.9rem",
-            lineHeight: 1.8,
-          }}>
+          <table className="legal-table">
             <tbody>
               {rows.map(({ label, value }) => (
-                <tr key={label} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                  <td style={{
-                    padding: "1.2rem 1.5rem",
-                    color: "rgba(255,255,255,0.4)",
-                    fontSize: "0.8rem",
-                    letterSpacing: "0.05em",
-                    whiteSpace: "nowrap",
-                    verticalAlign: "top",
-                    width: "230px",
-                    background: "rgba(255,255,255,0.02)",
-                  }}>
+                <tr key={label}>
+                  <td className="legal-label">
                     {label}
                   </td>
-                  <td style={{
-                    padding: "1.2rem 1.5rem",
-                    color: "#ccc",
-                    verticalAlign: "top",
-                  }}>
+                  <td className="legal-value">
                     {value}
                   </td>
                 </tr>

@@ -218,4 +218,45 @@
     padding: 1.2rem 2.5rem;
     font-size: 0.85rem;
   }
+
+  /* Responsive Table Overrides */
+  .legal-table, .legal-table tbody, .legal-table tr, .legal-table td {
+    display: block;
+    width: 100%;
+  }
+  .legal-table .legal-label {
+    width: 100% !important;
+    white-space: normal !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .legal-table .legal-value {
+    padding-top: 0 !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+/* ===== RESPONSIVE TABLE FOR LEGAL PAGES ===== */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.legal-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.legal-table td {
+  padding: 1.2rem 1.5rem;
+  vertical-align: top;
+}
+.legal-table .legal-label {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  width: 230px;
+  background: rgba(255,255,255,0.02);
+}
+.legal-table .legal-value {
+  color: #ccc;
 }
