@@ -14,6 +14,21 @@ export interface Product {
     height: number;
     width: number;
   };
+  image_s?: {
+    url: string;
+    height: number;
+    width: number;
+  };
+  image_m?: {
+    url: string;
+    height: number;
+    width: number;
+  };
+  image_l?: {
+    url: string;
+    height: number;
+    width: number;
+  };
   room?: string | string[];
   kind?: string | string[];
 }

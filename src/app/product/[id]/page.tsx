@@ -3,12 +3,12 @@ export const dynamic = 'force-dynamic';
 import "./product.css";
 import Link from "next/link";
 import { getProductDetail } from "@/lib/microcms";
+import type { Metadata } from "next";
+import ProductInteractive from "@/components/ProductInteractive";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
 }
-
-import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const paramData = await params;
@@ -32,8 +32,6 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   };
 }
 
-import AddToCartButton from "@/components/AddToCartButton";
-
 export default async function ProductPage({ params }: ProductPageProps) {
   const paramData = await params;
   
@@ -48,7 +46,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) {
     return (
       <main className="main-content product-page">
-
         <div style={{ padding: "5rem", textAlign: "center", fontSize: "1.5rem" }}>
           Product not found in microCMS. (Or ID is incorrect)
         </div>
@@ -67,7 +64,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     String(product.name || '').includes('モンステラ') ||
     String(product.name || '').includes('パキラ');
 
-  
   // Quick mapping for elemental coloring
   const lowerElement = elementStr.toLowerCase();
   const color = lowerElement.includes('fire') ? 'var(--element-fire-light)' :
@@ -78,40 +74,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <main className="main-content product-page">
-
-
-      <section className="product-detail-container">
-        <div className="product-image-column">
-          <div className="product-image-large glass-panel" style={{ overflow: 'hidden', padding: 0 }}>
-             {product.image?.url ? (
-               <img src={product.image.url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-             ) : (
-               <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${color}22, transparent)` }}>
-                 <span>{product.name || "No Image"}</span>
-               </div>
-             )}
-          </div>
-          
-          {isPlant && (
-            <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-secondary)', opacity: 0.8, lineHeight: 1.6, textAlign: 'center' }}>
-              ※商品画像は成長後のイメージ、または同等の参考写真です。<br />
-              植物は生き物のため、実際の個体によって樹形やサイズ感に違いがございます。
-            </div>
-          )}
-        </div>
-        
-        <div className="product-info-panel">
-          <span className="element-badge" style={{ borderColor: color, color: color }}>
-            {elementStr}
-          </span>
-          <h1 className="detail-title">{product.name}</h1>
-          <div className="detail-divider"></div>
-          <p className="detail-desc">{product.desc || "No description provided."}</p>
-          
-          {/* Add to Cart Button */}
-          <AddToCartButton product={product} color={color} />
-        </div>
-      </section>
+      <ProductInteractive 
+        product={product} 
+        color={color} 
+        isPlant={isPlant} 
+        elementStr={elementStr} 
+      />
     </main>
   );
 }
