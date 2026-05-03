@@ -2,16 +2,21 @@ import Image from "next/image";
 import Link from 'next/link';
 import HeroContent from '@/components/HeroContent';
 import ProductShowcase from '@/components/ProductShowcase';
-import { client } from "@/lib/microcms";
+import { client, getArticles, getLibraries } from "@/lib/microcms";
 import "./home.css";
+import "./magazine/magazine.css";
+import "./library/library.css";
 
 export default async function Home() {
-  // Fetch up to 8 latest products directly from microCMS
-  const response = await client.getList({
-    endpoint: "products",
-    queries: { limit: 8 }
-  });
-  const products = response.contents;
+  // Fetch products, magazine articles, and library items
+  const [productsRes, articlesRes, librariesRes] = await Promise.all([
+    client.getList({ endpoint: "products", queries: { limit: 8 } }),
+    getArticles({ limit: 3 }),
+    getLibraries({ limit: 3 })
+  ]);
+  const products = productsRes.contents;
+  const articles = articlesRes.contents;
+  const libraries = librariesRes.contents;
 
   return (
     <main className="main-content">
@@ -80,6 +85,96 @@ export default async function Home() {
 
       {/* Expanded Philosophy and Teasers section */}
       <ProductShowcase products={products} />
+
+      {/* Magazine Section */}
+      <section className="categories-section" style={{ paddingTop: '2rem' }}>
+        <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Latest from MAGAZINE</h2>
+        <div className="magazine-grid">
+          {articles.length === 0 ? (
+            <p className="no-articles">まだ記事がありません。</p>
+          ) : (
+            articles.map((article) => (
+              <Link href={`/magazine/${article.id}`} key={article.id} className="magazine-card hover-lift glass-panel">
+                <div className="magazine-card-img">
+                  {article.eyecatch?.url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={article.eyecatch.url} alt={article.title} />
+                  ) : (
+                    <div className="magazine-placeholder-img">
+                      <span>YASHIRO</span>
+                    </div>
+                  )}
+                  {article.category && article.category.length > 0 && (
+                    <div className="magazine-card-tags">
+                      {article.category.map((cat, idx) => (
+                        <span key={idx} className="magazine-tag">{cat}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="magazine-card-content">
+                  <div className="magazine-card-meta">
+                    {article.publishedAt && (
+                      <time dateTime={article.publishedAt}>
+                        {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                      </time>
+                    )}
+                  </div>
+                  <h2 className="magazine-card-title">{article.title}</h2>
+                </div>
+              </Link>
+            ))
+          )}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link href="/magazine" className="action-btn">READ MORE</Link>
+        </div>
+      </section>
+
+      {/* Library Section */}
+      <section className="categories-section" style={{ paddingTop: '2rem' }}>
+        <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Library & Appraisals</h2>
+        <div className="library-grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          {libraries.length === 0 ? (
+            <p className="no-articles" style={{ gridColumn: '1 / -1', textAlign: 'center' }}>現在、鑑定データを準備中です...</p>
+          ) : (
+            libraries.map((lib) => (
+              <Link href={`/library/${lib.id}`} key={lib.id} className="library-card hover-lift">
+                {lib.eyecatch ? (
+                  <div className="library-card-img">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={lib.eyecatch.url} alt={lib.title} />
+                  </div>
+                ) : (
+                  <div className="library-card-img library-placeholder-img">
+                    NO IMAGE
+                  </div>
+                )}
+                <div className="library-card-content">
+                  <div className="library-tags">
+                    {lib.layout && lib.layout.map((tag) => (
+                      <span key={tag} className="library-tag layout-tag">{tag}</span>
+                    ))}
+                    {lib.period && lib.period.map((tag) => (
+                      <span key={tag} className="library-tag period-tag">{tag}</span>
+                    ))}
+                    {lib.facing && lib.facing.map((tag) => (
+                      <span key={tag} className="library-tag facing-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <h2 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: '#fff', fontWeight: 500 }}>{lib.title}</h2>
+                  <div className="library-date" style={{ color: '#888', fontSize: '0.8rem' }}>
+                    {new Date(lib.publishedAt || lib.createdAt).toLocaleDateString("ja-JP")}
+                  </div>
+                </div>
+              </Link>
+            ))
+          )}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link href="/library" className="action-btn">VIEW ALL DATA</Link>
+        </div>
+      </section>
     </main>
   );
 }
