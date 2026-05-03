@@ -81,22 +81,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 
       <section className="product-detail-container">
-        <div className="product-image-large glass-panel" style={{ overflow: 'hidden', padding: 0 }}>
-           {product.image?.url ? (
-             <img src={product.image.url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-           ) : (
-             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${color}22, transparent)` }}>
-               <span>{product.name || "No Image"}</span>
-             </div>
-           )}
-        </div>
-        
-        {isPlant && (
-          <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--text-color)', opacity: 0.8, lineHeight: 1.6, padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <strong>※画像に関するご注意</strong><br />
-            商品画像は成長後のイメージ、または同等クラスの参考写真です。植物は生き物のため、お届けする実際の個体によって樹形、葉の付き方、サイズ感などに違いがございます。あらかじめご了承ください。
+        <div className="product-image-column">
+          <div className="product-image-large glass-panel" style={{ overflow: 'hidden', padding: 0 }}>
+             {product.image?.url ? (
+               <img src={product.image.url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+             ) : (
+               <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${color}22, transparent)` }}>
+                 <span>{product.name || "No Image"}</span>
+               </div>
+             )}
           </div>
-        )}
+          
+          {isPlant && (
+            <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-secondary)', opacity: 0.8, lineHeight: 1.6, textAlign: 'center' }}>
+              ※商品画像は成長後のイメージ、または同等の参考写真です。<br />
+              植物は生き物のため、実際の個体によって樹形やサイズ感に違いがございます。
+            </div>
+          )}
+        </div>
         
         <div className="product-info-panel">
           <span className="element-badge" style={{ borderColor: color, color: color }}>
