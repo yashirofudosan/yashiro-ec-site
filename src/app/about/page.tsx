@@ -11,16 +11,19 @@ export default function AboutPage() {
   return (
     <main className="main-content philosophy-page">
       <section className="philosophy-hero">
-        <div className="bg-glow"></div>
-        <h1 className="philosophy-title">
-          YASHIRO<br/>
-          <span style={{ fontSize: "0.55em", letterSpacing: "0.3em", fontWeight: 300 }}>
-            ABOUT US / YASHIROとは
-          </span>
-        </h1>
-        <p className="philosophy-subtitle">
-          Spatial optimization, grounded in Environmental Psychology.
-        </p>
+        <div className="philosophy-hero-bg"></div>
+        <div className="philosophy-hero-overlay"></div>
+        <div className="philosophy-hero-content">
+          <h1 className="philosophy-title">
+            PHILOSOPHY<br/>
+            <span style={{ fontSize: "0.35em", letterSpacing: "0.4em", fontWeight: 400, display: "block", marginTop: "1rem", color: "#ddd" }}>
+              YASHIROの空間哲学
+            </span>
+          </h1>
+          <p className="philosophy-subtitle">
+            Environmental Psychology & Spatial Debugging
+          </p>
+        </div>
       </section>
 
       <section className="philosophy-content">
