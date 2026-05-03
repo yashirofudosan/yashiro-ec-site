@@ -21,7 +21,7 @@ export default function Navigation() {
           <Link href="/" onClick={handleLinkClick}>YASHIRO</Link>
         </div>
         
-        {/* Desktop Links */}
+        {/* Secondary Links (Hidden on laptops < 1500px) */}
         <div className="nav-links desktop-only">
           <Link href="/type/furniture" className="nav-link-item hover-metal" style={{ fontWeight: 500 }}>{t("nav.furniture")}</Link>
           <Link href="/type/plant" className="nav-link-item hover-wood" style={{ fontWeight: 500 }}>{t("nav.plants")}</Link>
@@ -36,6 +36,10 @@ export default function Navigation() {
           <Link href="/room/bedroom" className="nav-link-item">{t("nav.bedroom")}</Link>
           <Link href="/room/workspace" className="nav-link-item">{t("nav.workspace")}</Link>
           <span style={{color: 'rgba(255,255,255,0.2)', margin: '0 0.5rem'}}>|</span>
+        </div>
+
+        {/* Core Links (Hidden only on mobile/tablet < 900px) */}
+        <div className="nav-links tablet-up">
           <Link href="/about" className="nav-link-item">{t("nav.about")}</Link>
           <Link href="/five-elements" className="nav-link-item hover-wood">{t("nav.fiveElements")}</Link>
           <Link href="/library" className="nav-link-item hover-earth" style={{ fontWeight: 'bold' }}>風水鑑定図書館</Link>
@@ -59,6 +63,13 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`}>
+        <button 
+          className="mobile-close-btn"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+        >
+          ✕
+        </button>
         <div className="mobile-menu-content">
           <div style={{ marginBottom: '2rem' }}><LanguageToggle /></div>
           <Link href="/search" className="mobile-link emphasis" onClick={handleLinkClick}>{t("nav.search")}</Link>

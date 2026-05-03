@@ -100,9 +100,7 @@ export default async function Home() {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={article.eyecatch.url} alt={article.title} />
                   ) : (
-                    <div className="magazine-placeholder-img">
-                      <span>YASHIRO</span>
-                    </div>
+                    <img src={`/api/og?title=${encodeURIComponent(article.title)}`} alt={article.title} style={{ objectFit: 'cover' }} />
                   )}
                   {article.category && article.category.length > 0 && (
                     <div className="magazine-card-tags">
@@ -146,8 +144,8 @@ export default async function Home() {
                     <img src={lib.eyecatch.url} alt={lib.title} />
                   </div>
                 ) : (
-                  <div className="library-card-img library-placeholder-img">
-                    NO IMAGE
+                  <div className="library-card-img">
+                    <img src={`/api/og?title=${encodeURIComponent(lib.title)}&subtitle=-%20LIBRARY%20-`} alt={lib.title} style={{ objectFit: 'cover' }} />
                   </div>
                 )}
                 <div className="library-card-content">

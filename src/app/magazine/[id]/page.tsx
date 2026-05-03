@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: MagazineDetailProps): Promise
     openGraph: {
       title: `${article.title} | YASHIRO EC MAGAZINE`,
       description: plainText ? `${plainText}...` : "YASHIRO EC マガジンの記事詳細ページです。",
-      images: article.eyecatch?.url ? [{ url: article.eyecatch.url }] : [],
+      images: [{ url: article.eyecatch?.url || `https://yashiro.vercel.app/api/og?title=${encodeURIComponent(article.title)}` }],
     },
   };
 }
@@ -78,11 +78,9 @@ export default async function MagazineDetailPage({ params }: MagazineDetailProps
           <h1 className="article-detail-title">{article.title}</h1>
         </header>
 
-        {article.eyecatch?.url && (
-          <figure className="article-detail-eyecatch fade-up" style={{ animationDelay: '0.1s' }}>
-            <img src={article.eyecatch.url} alt={article.title} />
-          </figure>
-        )}
+        <figure className="article-detail-eyecatch fade-up" style={{ animationDelay: '0.1s' }}>
+          <img src={article.eyecatch?.url || `/api/og?title=${encodeURIComponent(article.title)}`} alt={article.title} />
+        </figure>
 
         <div 
           className="article-detail-content fade-up" 

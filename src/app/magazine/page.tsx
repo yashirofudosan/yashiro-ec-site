@@ -47,9 +47,7 @@ export default async function MagazinePage() {
                   {article.eyecatch?.url ? (
                     <img src={article.eyecatch.url} alt={article.title} />
                   ) : (
-                    <div className="magazine-placeholder-img">
-                      <span>YASHIRO</span>
-                    </div>
+                    <img src={`/api/og?title=${encodeURIComponent(article.title)}`} alt={article.title} style={{ objectFit: 'cover' }} />
                   )}
                   {article.category && article.category.length > 0 && (
                     <div className="magazine-card-tags">

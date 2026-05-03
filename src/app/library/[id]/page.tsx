@@ -11,6 +11,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: `${lib.title} | 風水鑑定図書館`,
       description: `間取りと方位から読み解く風水鑑定結果。`,
+      openGraph: {
+        title: `${lib.title} | 風水鑑定図書館`,
+        description: `間取りと方位から読み解く風水鑑定結果。`,
+        images: [{ url: lib.eyecatch?.url || `https://yashiro.vercel.app/api/og?title=${encodeURIComponent(lib.title)}&subtitle=-%20LIBRARY%20-` }],
+      },
     };
   } catch (e) {
     return { title: "Not Found | 風水鑑定図書館" };
@@ -52,6 +57,16 @@ export default async function LibraryDetailPage({ params }: { params: { id: stri
         </div>
         <h1>{lib.title}</h1>
       </header>
+
+      {/* Hero Eyecatch matching the OG image size */}
+      <figure className="library-hero-eyecatch" style={{ width: '100%', aspectRatio: '1200 / 630', borderRadius: '12px', overflow: 'hidden', marginBottom: '4rem', position: 'relative' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src={lib.eyecatch?.url || `/api/og?title=${encodeURIComponent(lib.title)}&subtitle=-%20LIBRARY%20-`} 
+          alt={lib.title} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </figure>
 
       {(lib.eyecatch || lib.chartImage) && (
         <div className="library-visuals">

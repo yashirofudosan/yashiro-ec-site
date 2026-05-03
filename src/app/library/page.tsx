@@ -38,8 +38,8 @@ export default async function LibraryPage() {
                   <img src={lib.eyecatch.url} alt={lib.title} />
                 </div>
               ) : (
-                <div className="library-card-img library-placeholder-img">
-                  NO IMAGE
+                <div className="library-card-img">
+                  <img src={`/api/og?title=${encodeURIComponent(lib.title)}&subtitle=-%20LIBRARY%20-`} alt={lib.title} style={{ objectFit: 'cover' }} />
                 </div>
               )}
               <div className="library-card-content">
