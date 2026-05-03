@@ -1,6 +1,6 @@
 "use client";
 
-import { useCart } from "@/context/CartContext";
+import { useCart, getProductPrice } from "@/context/CartContext";
 
 export default function CartDrawer() {
   const { cartItems, isCartOpen, toggleCart, removeFromCart, cartTotal } = useCart();
@@ -43,20 +43,26 @@ export default function CartDrawer() {
           {cartItems.length === 0 ? (
             <p className="empty-cart-msg">Your space awaits its elements.</p>
           ) : (
-            cartItems.map(item => (
-              <div key={item.product.id} className="cart-item">
-                <div className="cart-item-info">
-                  <h4>{item.product.name}</h4>
-                  <p>¥{(item.product.price || 0).toLocaleString()} <span style={{opacity: 0.5}}>x {item.quantity}</span></p>
+            cartItems.map(item => {
+              const itemPrice = getProductPrice(item.product, item.variant);
+              return (
+                <div key={item.cartItemId} className="cart-item">
+                  <div className="cart-item-info">
+                    <h4>
+                      {item.product.name}
+                      {item.variant && <span style={{ opacity: 0.7, fontSize: '0.85em', marginLeft: '0.5rem' }}>(Size: {item.variant})</span>}
+                    </h4>
+                    <p>¥{itemPrice.toLocaleString()} <span style={{opacity: 0.5}}>x {item.quantity}</span></p>
+                  </div>
+                  <button 
+                    onClick={() => removeFromCart(item.cartItemId)}
+                    className="remove-item-btn"
+                  >
+                    REMOVE
+                  </button>
                 </div>
-                <button 
-                  onClick={() => removeFromCart(item.product.id)}
-                  className="remove-item-btn"
-                >
-                  REMOVE
-                </button>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
 

@@ -4,6 +4,9 @@ export interface Product {
   id: string;
   name: string;
   price: number;
+  price_s?: number;
+  price_m?: number;
+  price_l?: number;
   element: string[];
   desc?: string;
   image?: {

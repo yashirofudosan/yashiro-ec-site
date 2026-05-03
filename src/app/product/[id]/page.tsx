@@ -105,7 +105,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {elementStr}
           </span>
           <h1 className="detail-title">{product.name}</h1>
-          <p className="detail-price">¥{product.price ? product.price.toLocaleString() : '--'}</p>
           <div className="detail-divider"></div>
           <p className="detail-desc">{product.desc || "No description provided."}</p>
           
