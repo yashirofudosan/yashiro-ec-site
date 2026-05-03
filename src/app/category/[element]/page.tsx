@@ -59,9 +59,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     <main className={`main-content category-theme-${elementKey}`}>
 
 
-      <header className="category-header">
-        <h1 className="category-title" style={{ color: config.color }}>{config.name}</h1>
-        <p className="category-desc">{config.desc}</p>
+      <header 
+        className="category-header"
+        style={{
+          background: `linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, var(--bg-primary) 100%), url('/elements/${elementKey}.png') center/cover no-repeat`,
+          position: 'relative'
+        }}
+      >
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <h1 className="category-title" style={{ color: config.color, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>{config.name}</h1>
+          <p className="category-desc" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{config.desc}</p>
+        </div>
       </header>
 
       <section className="products-grid">
