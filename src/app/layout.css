@@ -161,20 +161,20 @@
   margin-right: auto;
 }
 
-/* Dynamic Elemental Hovers for Header & Footer */
-.nav-link-item.hover-wood:hover, .footer-col ul li a.hover-wood:hover { color: var(--element-wood-light) !important; text-shadow: 0 0 15px var(--element-wood-base); }
+/* Dynamic Elemental Hovers for Header, Footer & Mobile Menu */
+.nav-link-item.hover-wood:hover, .footer-col ul li a.hover-wood:hover, .mobile-link.hover-wood:hover { color: var(--element-wood-light) !important; text-shadow: 0 0 15px var(--element-wood-base); }
 .nav-link-item.hover-wood::after { background-color: var(--element-wood-light) !important; }
 
-.nav-link-item.hover-fire:hover, .footer-col ul li a.hover-fire:hover { color: var(--element-fire-light) !important; text-shadow: 0 0 15px var(--element-fire-base); }
+.nav-link-item.hover-fire:hover, .footer-col ul li a.hover-fire:hover, .mobile-link.hover-fire:hover { color: var(--element-fire-light) !important; text-shadow: 0 0 15px var(--element-fire-base); }
 .nav-link-item.hover-fire::after { background-color: var(--element-fire-light) !important; }
 
-.nav-link-item.hover-earth:hover, .footer-col ul li a.hover-earth:hover { color: var(--element-earth-light) !important; text-shadow: 0 0 15px var(--element-earth-base); }
+.nav-link-item.hover-earth:hover, .footer-col ul li a.hover-earth:hover, .mobile-link.hover-earth:hover { color: var(--element-earth-light) !important; text-shadow: 0 0 15px var(--element-earth-base); }
 .nav-link-item.hover-earth::after { background-color: var(--element-earth-light) !important; }
 
-.nav-link-item.hover-metal:hover, .footer-col ul li a.hover-metal:hover { color: var(--element-metal-light) !important; text-shadow: 0 0 15px var(--element-metal-base); }
+.nav-link-item.hover-metal:hover, .footer-col ul li a.hover-metal:hover, .mobile-link.hover-metal:hover { color: var(--element-metal-light) !important; text-shadow: 0 0 15px var(--element-metal-base); }
 .nav-link-item.hover-metal::after { background-color: var(--element-metal-light) !important; }
 
-.nav-link-item.hover-water:hover, .footer-col ul li a.hover-water:hover { color: var(--element-water-light) !important; text-shadow: 0 0 15px var(--element-water-base); }
+.nav-link-item.hover-water:hover, .footer-col ul li a.hover-water:hover, .mobile-link.hover-water:hover { color: var(--element-water-light) !important; text-shadow: 0 0 15px var(--element-water-base); }
 .nav-link-item.hover-water::after { background-color: var(--element-water-light) !important; }
 
 /* Responsive Mobile Navigation */
