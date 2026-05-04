@@ -51,9 +51,6 @@ export interface Article {
 export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || 'yashiro',
   apiKey: process.env.MICROCMS_API_KEY || '',
-  customRequestInit: {
-    cache: "no-store",
-  },
 });
 
 // Helper function to fetch products
@@ -61,6 +58,7 @@ export const getProducts = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Product>({
     endpoint: 'products',
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return data;
 };
@@ -71,6 +69,7 @@ export const getProductDetail = async (contentId: string, queries?: MicroCMSQuer
     endpoint: 'products',
     contentId,
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return data;
 };
@@ -80,6 +79,7 @@ export const getArticles = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Article>({
     endpoint: 'articles',
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return data;
 };
@@ -90,6 +90,7 @@ export const getArticleDetail = async (contentId: string, queries?: MicroCMSQuer
     endpoint: "articles",
     contentId,
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return detailData;
 };
@@ -129,6 +130,7 @@ export const getLibraries = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Library>({
     endpoint: "library",
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return listData;
 };
@@ -138,6 +140,7 @@ export const getLibraryDetail = async (contentId: string, queries?: MicroCMSQuer
     endpoint: "library",
     contentId,
     queries,
+    customRequestInit: { cache: 'no-store' },
   });
   return detailData;
 };
