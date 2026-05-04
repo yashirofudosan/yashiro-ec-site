@@ -51,6 +51,9 @@ export interface Article {
 export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || 'yashiro',
   apiKey: process.env.MICROCMS_API_KEY || '',
+  customRequestInit: {
+    cache: "no-store",
+  },
 });
 
 // Helper function to fetch products
