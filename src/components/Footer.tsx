@@ -41,19 +41,19 @@ export default function Footer() {
           <ul>
             <li><Link href="/about">{t("footer.philosophyLink1")}</Link></li>
             <li><Link href="/five-elements">{t("footer.philosophyLink2")}</Link></li>
-            <li><Link href="/library">風水鑑定図書館</Link></li>
-            <li><Link href="/magazine">MAGAZINE(記事)</Link></li>
+            <li><Link href="/library">{t("footer.library")}</Link></li>
+            <li><Link href="/magazine">{t("footer.magazine")}</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4>{t("footer.support")}</h4>
           <ul>
-            <li><Link href="/realestate">🏠 不動産サービス</Link></li>
+            <li><a href="https://yashirofudosan.jp">🏠 {t("footer.realestate")}</a></li>
             <li><Link href="/contact">{t("footer.contact")}</Link></li>
-            <li><Link href="/company">企業情報</Link></li>
-            <li><Link href="/legal/privacy">プライバシーポリシー</Link></li>
-            <li><Link href="/legal/tokushoho">特定商取引法に基づく表記</Link></li>
+            <li><Link href="/company">{t("footer.company")}</Link></li>
+            <li><Link href="/legal/privacy">{t("footer.privacy")}</Link></li>
+            <li><Link href="/legal/tokushoho">{t("footer.tokushoho")}</Link></li>
           </ul>
         </div>
       </div>

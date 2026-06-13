@@ -28,8 +28,14 @@ export const dictionaries = {
       philosophy: "PHILOSOPHY",
       philosophyLink1: "About YASHIRO",
       philosophyLink2: "The Five Elements",
+      library: "Feng Shui Audit Library",
+      magazine: "MAGAZINE",
       support: "SUPPORT",
-      contact: "Contact"
+      contact: "Contact",
+      realestate: "YASHIRO Real Estate",
+      company: "Company Profile",
+      privacy: "Privacy Policy",
+      tokushoho: "Act on Specified Commercial Transactions"
     },
     elements: {
       wood: "Wood",
@@ -68,8 +74,14 @@ export const dictionaries = {
       philosophy: "YASHIROの哲学",
       philosophyLink1: "YASHIROとは",
       philosophyLink2: "五行とは",
+      library: "風水鑑定図書館",
+      magazine: "MAGAZINE(記事)",
       support: "お客様サポート",
-      contact: "お問い合わせ"
+      contact: "お問い合わせ",
+      realestate: "YASHIRO不動産",
+      company: "企業情報",
+      privacy: "プライバシーポリシー",
+      tokushoho: "特定商取引法に基づく表記"
     },
     elements: {
       wood: "木 (Wood)",

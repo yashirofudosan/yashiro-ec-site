@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import HeroContent from '@/components/HeroContent';
 import ProductShowcase from '@/components/ProductShowcase';
-import { client, getArticles, getLibraries } from "@/lib/microcms";
+import { client, getProducts, getArticles, getLibraries } from "@/lib/microcms";
 import "./home.css";
 import "./magazine/magazine.css";
 import "./library/library.css";
@@ -12,7 +12,7 @@ import "./library/library.css";
 export default async function Home() {
   // Fetch products, magazine articles, and library items
   const [productsRes, articlesRes, librariesRes] = await Promise.all([
-    client.getList({ endpoint: "products", queries: { limit: 8 } }),
+    getProducts({ limit: 20 }),
     getArticles({ limit: 3 }),
     getLibraries({ limit: 3 })
   ]);

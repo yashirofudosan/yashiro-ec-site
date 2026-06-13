@@ -53,13 +53,44 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY || '',
 });
 
+const getLocalProductBaseName = (name: string): string | undefined => {
+  if (name.includes("エバーフレッシュ")) return "everfresh";
+  if (name.includes("アオダモ")) return "aodamo";
+  if (name.includes("アンスリウム")) return "anthurium";
+  if (name.includes("クロトン")) return "croton";
+  if (name.includes("ザミオカルカス")) return "zz_plant";
+  if (name.includes("ドラセナ")) return "dracaena";
+  if (name.includes("ガジュマル")) return "gajumaru";
+  if (name.includes("チランジア")) return "xerographica";
+  if (name.includes("ミリオンバンブー")) return "lucky_bamboo";
+  if (name.includes("ポトス")) return "pothos";
+  return undefined;
+};
+
+const mapProductLocalImage = <T extends Product>(product: T): T => {
+  if (!product.image?.url) {
+    const baseName = getLocalProductBaseName(product.name);
+    if (baseName) {
+      return {
+        ...product,
+        image: { url: `/images/${baseName}_m.png`, height: 1024, width: 1024 }, // default is M
+        image_s: { url: `/images/${baseName}_s.png`, height: 1024, width: 1024 },
+        image_m: { url: `/images/${baseName}_m.png`, height: 1024, width: 1024 },
+        image_l: { url: `/images/${baseName}_l.png`, height: 1024, width: 1024 },
+      };
+    }
+  }
+  return product;
+};
+
 // Helper function to fetch products
 export const getProducts = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Product>({
     endpoint: 'products',
-    queries,
+    queries: { limit: 100, ...queries },
     customRequestInit: { cache: 'no-store' },
   });
+  data.contents = data.contents.map(mapProductLocalImage);
   return data;
 };
 
@@ -71,7 +102,7 @@ export const getProductDetail = async (contentId: string, queries?: MicroCMSQuer
     queries,
     customRequestInit: { cache: 'no-store' },
   });
-  return data;
+  return mapProductLocalImage(data);
 };
 
 // Helper function to fetch articles
