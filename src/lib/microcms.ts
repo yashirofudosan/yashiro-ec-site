@@ -64,6 +64,11 @@ const getLocalProductBaseName = (name: string): string | undefined => {
   if (name.includes("チランジア")) return "xerographica";
   if (name.includes("ミリオンバンブー")) return "lucky_bamboo";
   if (name.includes("ポトス")) return "pothos";
+  if (name.includes("ハオルチア")) return "haworthia";
+  if (name.includes("エケベリア")) return "echeveria";
+  if (name.includes("リトープス")) return "lithops";
+  if (name.includes("オベサ")) return "obesa";
+  if (name.includes("グリーンネックレス")) return "green_necklace";
   return undefined;
 };
 
