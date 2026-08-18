@@ -2,8 +2,10 @@
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { Product } from "@/lib/microcms";
+import { getProductPrice, VariantSize } from "@/lib/pricing";
 
-export type VariantSize = 'S' | 'M' | 'L';
+export type { VariantSize };
+export { getProductPrice };
 
 export interface CartItem {
   cartItemId: string; // Unique ID for cart item (e.g. "productId-M")
@@ -19,13 +21,6 @@ interface CartContextType {
   removeFromCart: (cartItemId: string) => void;
   toggleCart: () => void;
   cartTotal: number;
-}
-
-export function getProductPrice(product: Product, variant?: VariantSize): number {
-  if (variant === 'S' && product.price_s) return product.price_s;
-  if (variant === 'M' && product.price_m) return product.price_m;
-  if (variant === 'L' && product.price_l) return product.price_l;
-  return product.price || 0;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);

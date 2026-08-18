@@ -13,9 +13,9 @@ export const dictionaries = {
       fiveElements: "FIVE ELEMENTS"
     },
     hero: {
-      title: "ENVIRONMENTAL PSYCHOLOGY",
-      subtitle: "Defining space as hardware that supports occupant performance.\nLogical spatial optimization for the modern lifestyle.",
-      cta: "EXPLORE THE ARCHITECTURE"
+      title: "WHERE THE FIVE ELEMENTS COME INTO BALANCE",
+      subtitle: "Wood, Fire, Earth, Metal, Water — curated plants and interior pieces that bring nature's balance into every room.",
+      cta: "EXPLORE THE COLLECTION"
     },
     footer: {
       collections: "COLLECTIONS",
@@ -59,9 +59,9 @@ export const dictionaries = {
       fiveElements: "五行とは"
     },
     hero: {
-      title: "空間の最適化",
-      subtitle: "パフォーマンスを最大化する、究極のハードウェア",
-      cta: "アーキテクチャを見る"
+      title: "五行が整う空間へ",
+      subtitle: "木・火・土・金・水。厳選した観葉植物とインテリアで、自然の力を暮らしに取り入れる。",
+      cta: "五行のコレクションを見る"
     },
     footer: {
       collections: "五行要素",

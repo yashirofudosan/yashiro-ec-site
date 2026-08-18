@@ -51,7 +51,7 @@ export default function ContactPage() {
             </div>
             <div className="detail-item">
               <span className="detail-label">SUPPORT</span>
-              <span>concierge@yashiro.ai</span>
+              <span>info@yashirofudosan.jp</span>
             </div>
           </div>
         </div>

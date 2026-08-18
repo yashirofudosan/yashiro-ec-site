@@ -3,7 +3,7 @@ import "../../philosophy/philosophy.css";
 
 export const metadata = {
   title: "プライバシーポリシー | YASHIRO",
-  description: "YASHIRO（屋代不動産）のプライバシーポリシー。個人情報の取り扱いについて。",
+  description: "YASHIRO（株式会社YASHIRO不動産）のプライバシーポリシー。個人情報の取り扱いについて。",
 };
 
 export default function PrivacyPage() {
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
 
           <h2>1. 事業者情報</h2>
           <p>
-            屋代不動産（以下「当社」）は、YASHIRO ECサイト（以下「本サービス」）を運営します。
+            株式会社YASHIRO不動産（以下「当社」）は、YASHIRO ECサイト（以下「本サービス」）を運営します。
             本プライバシーポリシーは、本サービスにおける個人情報の取り扱いについて定めるものです。
           </p>
 
